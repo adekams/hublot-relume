@@ -1,0 +1,66 @@
+.page-header {
+  background: url("../../../assets/svgs/Mystery\ Item\ B\ \(1\).svg"), fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  // padding: 0 70px;
+  .menu {
+    // height: 80px;
+    border-bottom: 1px solid #696767;
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      border-right: 1px solid #ccc;
+
+      img {
+        padding: 25px;
+      }
+    }
+  }
+
+  .padded {
+    // padding: 25px;
+    margin: 0 90px;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    height: 100%;
+  }
+}
+
+.first-page {
+  padding: 50px 40px 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  .flexed.rhs {
+    flex: 45%;
+    text-align: center;
+  }
+
+  .flexed.lhs {
+    flex: 45%;
+  }
+  .header-text {
+    color: #e4e4e7;
+    font-family: PP Fragment;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%; /* 67.5px */
+    margin-bottom: 80px;
+    max-width: 568px;
+    // text-align: left;
+  }
+
+  .header-bottom-text {
+    max-width: 316px;
+    color: var(--White, #fff);
+    text-align: justify;
+    font-family: PP Fragment;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%; /* 27px */
+  }
+}
