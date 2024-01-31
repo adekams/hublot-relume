@@ -1,0 +1,112 @@
+.padded-segment {
+  border-top: 0;
+}
+
+.categories {
+  padding: 0px 40px;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding-bottom: 140px;
+    .lhs {
+      max-width: 768px;
+      h3 {
+        color: #fff;
+        font-family: PP Fragment;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 57.6px */
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    .lhs {
+      flex: 45%;
+      text-align: center;
+      background: url("https://res.cloudinary.com/adenike/image/upload/v1702176228/relume-blurryface/Mystery_Item_A_iicwhw.svg"),
+        fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      img {
+        margin: auto;
+      }
+    }
+
+    .rhs {
+      flex: 45%;
+      .wireframe-blurryface .frame-7 {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 32px;
+        position: absolute;
+        top: 45px;
+        left: 0;
+      }
+
+      .category-list .selection {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 32px 0px 32px 37px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+        background-color: #0b0a0a;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-color: var(--gray-iron-900);
+
+        .text-header {
+          color: #a0a0ab;
+          font-family: PP Fragment;
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 130%; /* 52px */
+        }
+
+        .text-bottom {
+          color: #9da4ae;
+          text-align: justify;
+          font-family: PP Fragment;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 27px */
+        }
+
+        &:hover {
+          display: inline-flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+          padding: 24px 0px 24px 37px;
+          position: relative;
+          flex: 0 0 auto;
+          border-bottom-width: 1px;
+          border-bottom-style: solid;
+          border-color: var(--gray-iron-900);
+          background: linear-gradient(
+            180deg,
+            rgb(132.32, 132.32, 132.32) 0%,
+            rgba(255, 255, 255, 0.79) 47.4%,
+            rgba(206, 206, 206, 0.47) 100%
+          );
+          transition: width 0.7s;
+        }
+      }
+    }
+  }
+}
