@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   constructor(private router: Router) { }
   navigateToGoogle() {
-    this.router.navigate(['https://www.google.com']);
+    window.open('https://t.ly/bm0O1',);
+    // this.router.navigate(['https://www.google.com']);
 }
 
 }
