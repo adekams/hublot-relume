@@ -12,7 +12,7 @@ export class AppComponent {
 
   constructor() {
 
-    this.showDivs(this.slideIndex);
+    // this.showDivs(this.slideIndex);
   }
 
   plusDivs(n: any) {
