@@ -4,16 +4,81 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
-  box-sizing: border-box;
   background: #000;
   font-family: "PP Fragment", sans-serif;
+  color: #e4e4e7;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility Classes */
+.container {
+  width: 100%;
+  margin: 0 auto;
 }
 
 .padded-segment {
   margin: 0 90px;
   border: 1px solid #545454;
   border-bottom: none;
+  padding: 0;
+}
+
+/* Responsive padding for segments */
+@media screen and (max-width: 1440px) {
+  .padded-segment {
+    margin: 0 60px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .padded-segment {
+    margin: 0 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .padded-segment {
+    margin: 0 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .padded-segment {
+    margin: 0 16px;
+  }
+}
+
+/* Scrollbar styling */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #545454;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #696767;
 }

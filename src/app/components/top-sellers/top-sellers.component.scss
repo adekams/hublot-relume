@@ -12,34 +12,56 @@
     width: 100%;
     overflow-x: auto;
     gap: 25px;
+    scroll-behavior: smooth;
+
     .watch {
-      .watch-img {
-        // background-color: #1f1f1e;
-        background: url("https://res.cloudinary.com/adenike/image/upload/v1702176302/relume-blurryface/section2-watch-bg_ktnifm.svg");
-        padding: 50px 35px;
-        flex: 33%;
+      flex: 0 0 auto;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
       }
+
+      .watch-img {
+        background: url("https://res.cloudinary.com/adenike/image/upload/v1702176302/relume-blurryface/section2-watch-bg_ktnifm.svg");
+        padding: 50px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+      }
+
       .watch-text {
         margin-top: 10px;
+        padding: 0 5px;
       }
+
       .text {
         color: #e4e4e7;
         font-family: PP Fragment;
         font-size: 22px;
         font-style: normal;
         font-weight: 400;
-        line-height: 150%; /* 33px */
+        line-height: 150%;
       }
+
       small {
         color: var(--Gray-iron-200, #e4e4e7);
         font-family: PP Fragment;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
-        line-height: 150%; /* 21px */
+        line-height: 150%;
         margin-top: 5px;
         margin-bottom: 5px;
+        display: block;
       }
+
       .price {
         color: #e4e4e7;
         font-family: PP Fragment;
@@ -58,13 +80,19 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 30px */
+  line-height: 150%;
   margin-bottom: 25px;
 }
 
 .description {
   padding-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+
   .rhs {
+    flex: 45%;
+
     h3 {
       color: var(--Gray-iron-400, #a0a0ab);
       text-align: right;
@@ -72,11 +100,13 @@
       font-size: 18px;
       font-style: normal;
       font-weight: 400;
-      line-height: 150%; /* 27px */
+      line-height: 150%;
     }
   }
 
   .lhs {
+    flex: 45%;
+
     h4 {
       color: var(--Gray-iron-200, #e4e4e7);
       font-family: PP Fragment;
@@ -84,7 +114,233 @@
       font-style: normal;
       font-weight: 400;
       line-height: 133%;
-      flex: 33%;
+    }
+  }
+}
+
+.watch-img {
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+
+  img {
+    display: block;
+    height: auto;
+    width: 100%;
+    max-width: 298px;
+    max-height: 447px;
+
+    &.hover-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+  }
+
+  &:hover .hover-img {
+    opacity: 1;
+  }
+
+  &:hover .default-img:not(.zoom-img) {
+    opacity: 0;
+  }
+
+  .zoom-img {
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+}
+
+/* Tablet Landscape (1024px and below) */
+@media screen and (max-width: 1024px) {
+  .top-seller {
+    padding: 80px 40px 50px 40px;
+
+    .scroll-watches {
+      gap: 20px;
+
+      .watch {
+        min-width: 250px;
+      }
+    }
+  }
+
+  .description {
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 80px;
+
+    .rhs {
+      flex: none;
+
+      h3 {
+        text-align: left;
+        font-size: 16px;
+      }
+    }
+
+    .lhs {
+      flex: none;
+
+      h4 {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+/* Tablet Portrait (768px and below) */
+@media screen and (max-width: 768px) {
+  .top-seller {
+    padding: 60px 20px 40px 20px;
+
+    .scroll-watches {
+      gap: 15px;
+
+      .watch {
+        min-width: 200px;
+      }
+
+      .watch-img {
+        padding: 30px 5px;
+      }
+
+      .text {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 60px;
+
+    .rhs h3 {
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .lhs h4 {
+      font-size: 22px;
+      line-height: 125%;
+    }
+  }
+
+  .watch-img img {
+    max-width: 200px;
+    max-height: 300px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media screen and (max-width: 480px) {
+  .top-seller {
+    padding: 40px 16px 30px 16px;
+
+    .scroll-watches {
+      gap: 12px;
+
+      .watch {
+        min-width: 160px;
+      }
+
+      .watch-img {
+        padding: 20px 5px;
+      }
+
+      .text {
+        font-size: 14px;
+      }
+
+      small {
+        font-size: 12px;
+      }
+
+      .price {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    padding-bottom: 40px;
+    gap: 15px;
+
+    .rhs h3 {
+      font-size: 12px;
+    }
+
+    .lhs h4 {
+      font-size: 18px;
+    }
+  }
+
+  .watch-img img {
+    max-width: 150px;
+    max-height: 225px;
+  }
+}
+
+/* Ultra small devices (360px and below) */
+@media screen and (max-width: 360px) {
+  .top-seller {
+    padding: 30px 12px 20px 12px;
+
+    .scroll-watches {
+      gap: 10px;
+
+      .watch {
+        min-width: 140px;
+      }
+
+      .watch-img {
+        padding: 15px 3px;
+      }
+
+      .text {
+        font-size: 12px;
+      }
+
+      small {
+        font-size: 11px;
+      }
+
+      .price {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .description {
+    padding-bottom: 30px;
+
+    .rhs h3 {
+      font-size: 11px;
+    }
+
+    .lhs h4 {
+      font-size: 16px;
     }
   }
 }
